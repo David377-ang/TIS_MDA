@@ -1,0 +1,21 @@
+url = http://172.18.1.16:8088/api/v1/register/
+{
+  "area": "",
+  "projectLine": "",
+  "projectSpace": "",
+  "stage": "MDA",
+  "version": "",
+  "fixtureSerialNumber": "",
+  "boxNumber": "",
+  "customer": "Meta",
+  "projectModel": "YV4",
+  "projectProduct": "YV4_FAN",
+  "projectFixture": "240016",
+  "projectPartNumber": "B91.10H10.000T",
+  "motherBoardSerialNumber": "",
+  "bmcBbSerialNumber": "",
+  "operatorId": "",
+  "logName": "",
+  "sub": "",
+  "testResult": ""
+}
