@@ -26,7 +26,7 @@ messagebox.showinfo("Reminder", "The fixture [{fixtureID}] has been Shutdown!!!\
 def Upload_to_TIS_Fake(param, random_sn, log_name):
     # OA:10.249.201.16
     # TE:172.18.1.16
-    url = "http://172.18.1.16:8088/api/v1/register/"
+    url = "http://10.239.170.17:8088/api/v1/register/"
     if param[0] == "Monica" or param[0] == "Meta" or param[0] == "AWS":
         url = url + "save" + param[0] + "ICT"
     else:

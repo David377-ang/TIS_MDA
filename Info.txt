@@ -1,4 +1,4 @@
-url = http://172.18.1.16:8088/api/v1/register/
+url = http://10.239.170.17:8088/api/v1/register/
 {
   "area": "",
   "projectLine": "",
