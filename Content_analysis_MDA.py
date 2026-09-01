@@ -285,6 +285,9 @@ def Request_to_MARS():
         file_content = ''.join(lines[1:])
     data = json.loads(file_content)
     machine_number = data["fixtureUseCount"]
+    
+    return machine_number, "1" # 改動 1：直接返回正常代碼 "1"，以下所有網路連線皆不再執行
+    
     # OA:10.249.201.17
     # TE:172.18.1.17
     url = 'http://172.18.1.17:8085/api/projectsFact/checkAndSetFixtureStatusICT?projectFixture=' + machine_number
@@ -301,6 +304,9 @@ def Request_to_MARS():
 
 
 def Update_status_to_MARS(machine_number, result, logname):
+    
+    return  # 👈 改動 2：直接 return，完全阻斷狀態上傳至 MARS 伺服器的行為
+    
     if result == 'FAIL-STOP':
         statusCode = '9'
         str = "The Machine : " + machine_number + \

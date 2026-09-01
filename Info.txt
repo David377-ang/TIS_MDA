@@ -12,6 +12,7 @@ url = http://10.239.170.17:8088/api/v1/register/
   "projectProduct": "YV4_FAN",
   "projectFixture": "240016",
   "projectPartNumber": "B91.10H10.000T",
+  "fixtureUseCount": "240016",
   "motherBoardSerialNumber": "",
   "bmcBbSerialNumber": "",
   "operatorId": "",
