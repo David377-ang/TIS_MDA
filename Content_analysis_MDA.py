@@ -6,7 +6,12 @@ from datetime import datetime
 import csv
 import subprocess
 import time
-import pywinusb.hid as hid
+
+try:
+    import pywinusb.hid as hid
+except ImportError:
+    hid = None
+
 import traceback
 
 
@@ -31,7 +36,8 @@ def Upload_to_TIS_Fake(param, random_sn, log_name):
         url = url + "save" + param[0] + "ICT"
     else:
         url = url + "saveOthersICT"
-    with open("D:/TIS/Info.txt", 'r', encoding='utf-8') as file:
+    # with open("D:/TIS/Info.txt", 'r', encoding='utf-8') as file:
+    with open("Info.txt", 'r', encoding='utf-8') as file:
         lines = file.readlines()
     if lines:
         file_content = ''.join(lines[1:])
@@ -64,7 +70,8 @@ def Upload_to_TIS_Fake(param, random_sn, log_name):
 
 
 def Upload_to_TIS(slot, result, sn, filename, test_result, operID):
-    with open("D:/TIS/Info.txt", 'r', encoding='utf-8') as file:
+    # with open("D:/TIS/Info.txt", 'r', encoding='utf-8') as file:
+    with open("Info.txt", 'r', encoding='utf-8') as file:
         lines = file.readlines()
     if lines:
         file_content = ''.join(lines[1:])
@@ -279,7 +286,8 @@ def Upload_json_to_ATE(json_data):
             file.write("==================================================\n")
 
 def Request_to_MARS():
-    with open("D:/TIS/Info.txt", 'r', encoding='utf-8') as file:
+    # with open("D:/TIS/Info.txt", 'r', encoding='utf-8') as file:
+    with open("Info.txt", 'r', encoding='utf-8') as file:
         lines = file.readlines()
     if lines:
         file_content = ''.join(lines[1:])
@@ -366,6 +374,10 @@ class TIS_format:
 
 
 def read():
+
+    if hid is None:
+        return "0"
+    
     mywriter = HIDWriter()
     if mywriter.initialized:
         basc_data = mywriter.read()
